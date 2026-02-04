@@ -1,2 +1,2 @@
 # First Project
-Member: Yixiao Liu
+Member: Yixiao Liu, Qingyang Ran
