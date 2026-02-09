@@ -1,0 +1,39 @@
+{
+  "continue": {
+    "rvcontinue": "20260117054713|1333346613",
+    "continue": "||"
+  },
+  "query": {
+    "redirects": [
+      {
+        "from": "John von Neuman",
+        "to": "John von Neumann"
+      }
+    ],
+    "pages": [
+      {
+        "pageid": 15942,
+        "ns": 0,
+        "title": "John von Neumann",
+        "revisions": [
+          {
+            "user": "Smasongarrison",
+            "timestamp": "2026-01-25T23:51:24Z"
+          },
+          {
+            "user": "Smasongarrison",
+            "timestamp": "2026-01-25T23:26:54Z"
+          },
+          {
+            "user": "Citation bot",
+            "timestamp": "2026-01-21T20:29:46Z"
+          },
+          {
+            "user": "Smasongarrison",
+            "timestamp": "2026-01-20T05:29:08Z"
+          }
+        ]
+      }
+    ]
+  }
+}
