@@ -4,13 +4,13 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 public class Wiki {
-    WikiConnect wikiConnect = new WikiConnect();
+    WikipediaConnection wikipediaConnection = new WikipediaConnection();
     private String jsonData;
     RevisionFormatter revisionFormatter;
 
     public void searchTitle(String title) throws IOException, URISyntaxException {
-        wikiConnect.connectToWiki(title);
-        jsonData = wikiConnect.getJsonAsString();
+        wikipediaConnection.connectWikipedia(title);
+        jsonData = wikipediaConnection.getJsonAsString();
     }
 
     public String getRevisionTable() {
