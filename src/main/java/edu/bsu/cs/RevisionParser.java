@@ -20,7 +20,7 @@ public class RevisionParser {
             revisions.add(new Revision(user, time));
         }
         List<Map<String, String>> preRedirects = JsonPath.read(jsonData, "$..redirects[0]");
-        if (preRedirects != null) {
+        if (!preRedirects.isEmpty()) {
             redirectStatus = true;
             redirectFrom = preRedirects.getFirst().get("from");
             redirectTo = preRedirects.getFirst().get("to");
