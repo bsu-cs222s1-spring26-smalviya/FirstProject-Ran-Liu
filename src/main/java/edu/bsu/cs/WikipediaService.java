@@ -4,17 +4,16 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 public class WikipediaService {
-    WikipediaConnection wikipediaConnection = new WikipediaConnection();
     private String jsonData;
-    RevisionFormatter revisionFormatter;
 
     public void searchTitle(String title) throws IOException, URISyntaxException {
+        WikipediaConnection wikipediaConnection = new WikipediaConnection();
         wikipediaConnection.connectWikipedia(title);
         jsonData = wikipediaConnection.getJsonAsString();
     }
 
     public String getRevisionTable() {
-        revisionFormatter = new RevisionFormatter(jsonData);
+        RevisionFormatter revisionFormatter = new RevisionFormatter(jsonData);
         return revisionFormatter.getRevisionTable();
     }
 }
