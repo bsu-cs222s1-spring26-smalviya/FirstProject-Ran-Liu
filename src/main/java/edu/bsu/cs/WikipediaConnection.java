@@ -17,7 +17,7 @@ public class WikipediaConnection {
                     "&rvprop=timestamp" + URLEncoder.encode("|", Charset.defaultCharset()) + "user&rvlimit=15&redirects";
             URI uri = new URI(encodedUrlString);
             connection = uri.toURL().openConnection();
-            connection.setRequestProperty("User-Agent", "Wikipedia Revision Reporter/0.1 (qingyang.ran@bsu.edu)");
+            connection.setRequestProperty("User-Agent", "Wikipedia Revision Reporter/0.1.0 (qingyang.ran@bsu.edu)");
             connection.connect();
         } catch (IOException e) {
             System.err.println("[Error] Network connection failed, please check your network status!");
