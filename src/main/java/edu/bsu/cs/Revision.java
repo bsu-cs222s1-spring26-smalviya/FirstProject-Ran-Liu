@@ -13,7 +13,7 @@ public class Revision {
         return user;
     }
 
-    public String getTimeStamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 }
