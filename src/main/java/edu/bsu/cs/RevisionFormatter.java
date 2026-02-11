@@ -14,7 +14,7 @@ public class RevisionFormatter {
         }
         for (int i = 0; i < revisionParser.getRevisionsCount(); i++) {
             revisionTable.append(i + 1).append("  ")
-                    .append(revisionParser.getRevisionsTime(i)).append("  ")
+                    .append(revisionParser.getRevisionsTimestamp(i)).append("  ")
                     .append(revisionParser.getRevisionsUser(i)).append("\n");
         }
         return revisionTable.toString();

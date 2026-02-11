@@ -50,15 +50,15 @@ public class RevisionParserTest {
     }
 
     @Test
-    public void revisionTime() {
-        Assertions.assertEquals("2026-01-25T23:51:24Z", revisionParser_Redirect.getRevisionsTime(0));
-        Assertions.assertEquals("2026-01-25T23:26:54Z", revisionParser_Redirect.getRevisionsTime(1));
-        Assertions.assertEquals("2026-01-21T20:29:46Z", revisionParser_Redirect.getRevisionsTime(2));
-        Assertions.assertEquals("2026-01-20T05:29:08Z", revisionParser_Redirect.getRevisionsTime(3));
-        Assertions.assertEquals("2026-01-25T23:51:24Z", revisionParser_NoRedirect.getRevisionsTime(0));
-        Assertions.assertEquals("2026-01-25T23:26:54Z", revisionParser_NoRedirect.getRevisionsTime(1));
-        Assertions.assertEquals("2026-01-21T20:29:46Z", revisionParser_NoRedirect.getRevisionsTime(2));
-        Assertions.assertEquals("2026-01-20T05:29:08Z", revisionParser_NoRedirect.getRevisionsTime(3));
+    public void revisionTimestamp() {
+        Assertions.assertEquals("2026-01-25T23:51:24Z", revisionParser_Redirect.getRevisionsTimestamp(0));
+        Assertions.assertEquals("2026-01-25T23:26:54Z", revisionParser_Redirect.getRevisionsTimestamp(1));
+        Assertions.assertEquals("2026-01-21T20:29:46Z", revisionParser_Redirect.getRevisionsTimestamp(2));
+        Assertions.assertEquals("2026-01-20T05:29:08Z", revisionParser_Redirect.getRevisionsTimestamp(3));
+        Assertions.assertEquals("2026-01-25T23:51:24Z", revisionParser_NoRedirect.getRevisionsTimestamp(0));
+        Assertions.assertEquals("2026-01-25T23:26:54Z", revisionParser_NoRedirect.getRevisionsTimestamp(1));
+        Assertions.assertEquals("2026-01-21T20:29:46Z", revisionParser_NoRedirect.getRevisionsTimestamp(2));
+        Assertions.assertEquals("2026-01-20T05:29:08Z", revisionParser_NoRedirect.getRevisionsTimestamp(3));
     }
 
     @Test

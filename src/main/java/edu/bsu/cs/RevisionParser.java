@@ -16,8 +16,8 @@ public class RevisionParser {
         List<Map<String, String>> preRevisions = JsonPath.read(jsonData, "$..revisions[*]");
         for (Map<String, String> i : preRevisions) {
             String user = i.get("user");
-            String time = i.get("timestamp");
-            revisions.add(new Revision(user, time));
+            String timestamp = i.get("timestamp");
+            revisions.add(new Revision(user, timestamp));
         }
         List<Map<String, String>> preRedirects = JsonPath.read(jsonData, "$..redirects[0]");
         if (!preRedirects.isEmpty()) {
@@ -35,8 +35,8 @@ public class RevisionParser {
         return revisions.get(index).getUser();
     }
 
-    public String getRevisionsTime(int index) {
-        return revisions.get(index).getTimeStamp();
+    public String getRevisionsTimestamp(int index) {
+        return revisions.get(index).getTimestamp();
     }
 
     public boolean isRevisionsRedirects() {

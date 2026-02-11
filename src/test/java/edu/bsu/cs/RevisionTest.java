@@ -12,7 +12,7 @@ public class RevisionTest {
     }
 
     @Test
-    public void getTimeStamp() {
-        Assertions.assertEquals("2026-02-08T20:00:22Z", revision.getTimeStamp());
+    public void getTimestamp() {
+        Assertions.assertEquals("2026-02-08T20:00:22Z", revision.getTimestamp());
     }
 }
