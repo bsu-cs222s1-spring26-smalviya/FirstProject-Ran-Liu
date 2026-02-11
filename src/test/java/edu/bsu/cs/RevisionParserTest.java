@@ -32,13 +32,13 @@ public class RevisionParserTest {
     }
 
     @Test
-    public void revisionsCount() {
+    public void getRevisionsCount() {
         Assertions.assertEquals(4, revisionParser_Redirect.getRevisionsCount());
         Assertions.assertEquals(4, revisionParser_NoRedirect.getRevisionsCount());
     }
 
     @Test
-    public void revisionsUser() {
+    public void getRevisionsUser() {
         Assertions.assertEquals("Smasongarrison", revisionParser_Redirect.getRevisionsUser(0));
         Assertions.assertEquals("Smasongarrison", revisionParser_Redirect.getRevisionsUser(1));
         Assertions.assertEquals("Citation bot", revisionParser_Redirect.getRevisionsUser(2));
@@ -50,7 +50,7 @@ public class RevisionParserTest {
     }
 
     @Test
-    public void revisionTimestamp() {
+    public void getRevisionTimestamp() {
         Assertions.assertEquals("2026-01-25T23:51:24Z", revisionParser_Redirect.getRevisionsTimestamp(0));
         Assertions.assertEquals("2026-01-25T23:26:54Z", revisionParser_Redirect.getRevisionsTimestamp(1));
         Assertions.assertEquals("2026-01-21T20:29:46Z", revisionParser_Redirect.getRevisionsTimestamp(2));
@@ -62,18 +62,18 @@ public class RevisionParserTest {
     }
 
     @Test
-    public void isRedirect() {
+    public void isRevisionsRedirects() {
         Assertions.assertTrue(revisionParser_Redirect.isRevisionsRedirects());
         Assertions.assertFalse(revisionParser_NoRedirect.isRevisionsRedirects());
     }
 
     @Test
-    public void revisionRedirectFrom() {
+    public void getRevisionsRedirectFrom() {
         Assertions.assertEquals("John von Neuman", revisionParser_Redirect.getRevisionsRedirectFrom());
     }
 
     @Test
-    public void revisionRedirectTo() {
+    public void getRevisionsRedirectTo() {
         Assertions.assertEquals("John von Neumann", revisionParser_Redirect.getRevisionsRedirectTo());
     }
 }
