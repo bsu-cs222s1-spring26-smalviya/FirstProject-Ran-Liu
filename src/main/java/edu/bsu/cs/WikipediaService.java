@@ -3,7 +3,7 @@ package edu.bsu.cs;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-public class Wiki {
+public class WikipediaService {
     WikipediaConnection wikipediaConnection = new WikipediaConnection();
     private String jsonData;
     RevisionFormatter revisionFormatter;
