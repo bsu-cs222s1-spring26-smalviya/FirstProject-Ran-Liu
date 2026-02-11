@@ -13,7 +13,7 @@ public class WikipediaConnection {
     public void connectWikipedia(String title) throws IOException, URISyntaxException {
         String encodedUrlString = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles=" +
                 URLEncoder.encode(title, Charset.defaultCharset()) +
-                "&rvprop=timestamp" + URLEncoder.encode("|", Charset.defaultCharset()) + "user&rvlimit=4&redirects";
+                "&rvprop=timestamp" + URLEncoder.encode("|", Charset.defaultCharset()) + "user&rvlimit=15&redirects";
         URI uri = new URI(encodedUrlString);
         connection = uri.toURL().openConnection();
         connection.setRequestProperty("User-Agent", "Wikipedia Revision Reporter/0.1 (qingyang.ran@bsu.edu)");
