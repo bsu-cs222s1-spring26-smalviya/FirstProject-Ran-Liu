@@ -5,7 +5,7 @@ import java.net.URISyntaxException;
 
 public class Main {
     public static void main(String[] args) throws IOException, URISyntaxException {
-        Menu menu = new Menu();
-        menu.showMenu();
+        ConsoleMenu consoleMenu = new ConsoleMenu();
+        consoleMenu.showConsoleMenu();
     }
 }
