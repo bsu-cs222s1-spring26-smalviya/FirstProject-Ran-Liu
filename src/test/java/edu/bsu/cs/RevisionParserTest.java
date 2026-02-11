@@ -11,6 +11,7 @@ import java.util.Objects;
 public class RevisionParserTest {
     RevisionParser revisionParser_Redirect;
     RevisionParser revisionParser_NoRedirect;
+    RevisionParser revisionParser_Missing;
 
     public RevisionParserTest() throws NullPointerException, IOException {
         try (InputStream jsonFile = Thread.currentThread().getContextClassLoader()
@@ -28,6 +29,14 @@ public class RevisionParserTest {
             }
             String jsonData = new String(Objects.requireNonNull(jsonFile).readAllBytes(), Charset.defaultCharset());
             revisionParser_NoRedirect = new RevisionParser(jsonData);
+        }
+        try (InputStream jsonFile = Thread.currentThread().getContextClassLoader()
+                .getResourceAsStream("Case_Missing.json")) {
+            if (jsonFile == null) {
+                throw new IllegalStateException("[Error] JSON file not found! ");
+            }
+            String jsonData = new String(Objects.requireNonNull(jsonFile).readAllBytes(), Charset.defaultCharset());
+            revisionParser_Missing = new RevisionParser(jsonData);
         }
     }
 
@@ -75,5 +84,12 @@ public class RevisionParserTest {
     @Test
     public void getRevisionsRedirectTo() {
         Assertions.assertEquals("John von Neumann", revisionParser_Redirect.getRevisionsRedirectTo());
+    }
+
+    @Test
+    public void isRevisionsMissing(){
+        Assertions.assertTrue(revisionParser_Missing.isRevisionsMissing());
+        Assertions.assertFalse(revisionParser_Redirect.isRevisionsMissing());
+        Assertions.assertFalse(revisionParser_NoRedirect.isRevisionsMissing());
     }
 }

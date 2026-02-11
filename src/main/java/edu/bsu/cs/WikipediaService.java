@@ -14,6 +14,10 @@ public class WikipediaService {
 
     public String getRevisionTable() {
         RevisionFormatter revisionFormatter = new RevisionFormatter(jsonData);
+        if(revisionFormatter.revisionParser.isRevisionsMissing()){
+            System.err.println("[Error] No corresponding Wikipedia page found!");
+            System.exit(1);
+        }
         return revisionFormatter.getRevisionTable();
     }
 }

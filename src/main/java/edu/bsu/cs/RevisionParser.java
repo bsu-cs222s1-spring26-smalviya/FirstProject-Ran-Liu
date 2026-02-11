@@ -11,8 +11,13 @@ public class RevisionParser {
     private boolean redirectStatus = false;
     private String redirectFrom;
     private String redirectTo;
+    private boolean missingStatus = true;
 
     public RevisionParser(String jsonData) {
+        List<Map<String, String>> preMissing = JsonPath.read(jsonData, "$..pages..missing");
+        if(preMissing.isEmpty()){
+            missingStatus = false;
+        }
         List<Map<String, String>> preRevisions = JsonPath.read(jsonData, "$..revisions[*]");
         for (Map<String, String> i : preRevisions) {
             String user = i.get("user");
@@ -49,5 +54,9 @@ public class RevisionParser {
 
     public String getRevisionsRedirectTo() {
         return redirectTo;
+    }
+
+    public boolean isRevisionsMissing() {
+        return missingStatus;
     }
 }
