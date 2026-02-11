@@ -14,7 +14,7 @@ public class RevisionParserTest {
 
     public RevisionParserTest() throws NullPointerException, IOException {
         try (InputStream jsonFile = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream("test.json")) {
+                .getResourceAsStream("Case_Redirect.json")) {
             if (jsonFile == null) {
                 throw new IllegalStateException("[Error] JSON file not found! ");
             }
@@ -22,7 +22,7 @@ public class RevisionParserTest {
             revisionParser = new RevisionParser(jsonData);
         }
         try (InputStream jsonFile = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream("test2.json")) {
+                .getResourceAsStream("Case_NoRedirect.json")) {
             if (jsonFile == null) {
                 throw new IllegalStateException("[Error] JSON file not found! ");
             }

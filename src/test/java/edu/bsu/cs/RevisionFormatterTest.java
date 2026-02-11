@@ -13,7 +13,7 @@ public class RevisionFormatterTest {
 
     public RevisionFormatterTest() throws NullPointerException, IOException {
         try (InputStream jsonFile = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream("test.json")) {
+                .getResourceAsStream("Case_Redirect.json")) {
             if (jsonFile == null) {
                 throw new IllegalStateException("[Error] JSON file not found! ");
             }
