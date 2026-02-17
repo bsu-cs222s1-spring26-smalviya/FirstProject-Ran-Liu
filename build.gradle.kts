@@ -1,8 +1,10 @@
 plugins {
     id("java")
+    id("application")
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
-group = "org.example"
+group = "edu.bsu.cs"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -20,4 +22,23 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(25))
+    }
+}
+
+javafx {
+    version = "25.0.1"
+    modules("javafx.controls", "javafx.fxml")
+}
+
+application {
+    mainClass.set("edu.bsu.cs.Main")
+}
+
+tasks.withType<JavaExec> {
+    standardInput = System.`in`
 }
