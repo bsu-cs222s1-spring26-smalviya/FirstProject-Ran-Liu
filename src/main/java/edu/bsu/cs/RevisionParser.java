@@ -12,6 +12,7 @@ public class RevisionParser {
     private String redirectFrom;
     private String redirectTo;
     private boolean missingStatus = true;
+    private String title;
 
     public RevisionParser(String jsonData) {
         List<Map<String, String>> rawMissing = JsonPath.read(jsonData, "$..pages..missing");
@@ -30,6 +31,8 @@ public class RevisionParser {
             redirectFrom = rawRedirects.getFirst().get("from");
             redirectTo = rawRedirects.getFirst().get("to");
         }
+        List<String> rawTitle = JsonPath.read(jsonData, "$..pages..title");
+        title = rawTitle.getFirst();
     }
 
     public int getRevisionsCount() {
@@ -62,5 +65,9 @@ public class RevisionParser {
 
     public List<Revision> getRevisions() {
         return revisions;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

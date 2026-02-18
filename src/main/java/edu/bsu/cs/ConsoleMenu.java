@@ -24,7 +24,7 @@ public class ConsoleMenu {
             System.err.println("[Warning] Invalid input!");
             System.exit(1);
         } catch (PageMissingException e) {
-            System.err.println("[Error] No corresponding Wikipedia page found!");
+            System.err.println("[Information] No corresponding Wikipedia page found!");
             System.exit(1);
         }
         System.out.print(wikipediaService.getRevisionOutput());

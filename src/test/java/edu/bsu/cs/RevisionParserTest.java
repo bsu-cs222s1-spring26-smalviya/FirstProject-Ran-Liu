@@ -92,4 +92,9 @@ public class RevisionParserTest {
         Assertions.assertFalse(revisionParser_Redirect.isRevisionsMissing());
         Assertions.assertFalse(revisionParser_NoRedirect.isRevisionsMissing());
     }
+
+    @Test
+    public void getTitle() {
+        Assertions.assertEquals("John von Neumann", revisionParser_Redirect.getTitle());
+    }
 }
