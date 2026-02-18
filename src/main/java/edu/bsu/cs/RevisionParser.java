@@ -14,21 +14,21 @@ public class RevisionParser {
     private boolean missingStatus = true;
 
     public RevisionParser(String jsonData) {
-        List<Map<String, String>> preMissing = JsonPath.read(jsonData, "$..pages..missing");
-        if(preMissing.isEmpty()){
+        List<Map<String, String>> rawMissing = JsonPath.read(jsonData, "$..pages..missing");
+        if (rawMissing.isEmpty()) {
             missingStatus = false;
         }
-        List<Map<String, String>> preRevisions = JsonPath.read(jsonData, "$..revisions[*]");
-        for (Map<String, String> i : preRevisions) {
+        List<Map<String, String>> rawRevisions = JsonPath.read(jsonData, "$..revisions[*]");
+        for (Map<String, String> i : rawRevisions) {
             String user = i.get("user");
             String timestamp = i.get("timestamp");
             revisions.add(new Revision(user, timestamp));
         }
-        List<Map<String, String>> preRedirects = JsonPath.read(jsonData, "$..redirects[0]");
-        if (!preRedirects.isEmpty()) {
+        List<Map<String, String>> rawRedirects = JsonPath.read(jsonData, "$..redirects[0]");
+        if (!rawRedirects.isEmpty()) {
             redirectStatus = true;
-            redirectFrom = preRedirects.getFirst().get("from");
-            redirectTo = preRedirects.getFirst().get("to");
+            redirectFrom = rawRedirects.getFirst().get("from");
+            redirectTo = rawRedirects.getFirst().get("to");
         }
     }
 
@@ -58,5 +58,9 @@ public class RevisionParser {
 
     public boolean isRevisionsMissing() {
         return missingStatus;
+    }
+
+    public List<Revision> getRevisions() {
+        return revisions;
     }
 }

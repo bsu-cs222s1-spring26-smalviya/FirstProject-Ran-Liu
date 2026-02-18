@@ -7,7 +7,7 @@ public class RevisionFormatter {
         revisionParser = new RevisionParser(jsonData);
     }
 
-    public String getRevisionTable() {
+    public String getRevisionOutput() {
         StringBuilder revisionTable = new StringBuilder();
         if (revisionParser.isRevisionsRedirects()) {
             revisionTable.append("Redirected to ").append(revisionParser.getRevisionsRedirectTo()).append("\n");

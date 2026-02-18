@@ -23,12 +23,12 @@ public class RevisionFormatterTest {
     }
 
     @Test
-    public void getRevisionTable() {
+    public void getRevisionOutput() {
         String expectedStr = "Redirected to John von Neumann\n" +
                 "1  2026-01-25T23:51:24Z  Smasongarrison\n" +
                 "2  2026-01-25T23:26:54Z  Smasongarrison\n" +
                 "3  2026-01-21T20:29:46Z  Citation bot\n" +
                 "4  2026-01-20T05:29:08Z  Smasongarrison\n";
-        Assertions.assertEquals(expectedStr, revisionFormatter.getRevisionTable());
+        Assertions.assertEquals(expectedStr, revisionFormatter.getRevisionOutput());
     }
 }

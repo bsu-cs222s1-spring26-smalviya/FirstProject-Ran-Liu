@@ -87,7 +87,7 @@ public class RevisionParserTest {
     }
 
     @Test
-    public void isRevisionsMissing(){
+    public void isRevisionsMissing() {
         Assertions.assertTrue(revisionParser_Missing.isRevisionsMissing());
         Assertions.assertFalse(revisionParser_Redirect.isRevisionsMissing());
         Assertions.assertFalse(revisionParser_NoRedirect.isRevisionsMissing());

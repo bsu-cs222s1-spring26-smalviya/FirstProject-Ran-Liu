@@ -48,7 +48,15 @@ public class GUI extends Application {
 
     private void startSearch() throws IOException, URISyntaxException {
         WikipediaService wikipediaService = new WikipediaService();
-        wikipediaService.searchTitle(titleTextField.getText());
-        revisionTextArea.setText(wikipediaService.getRevisionTable());
+        try {
+            wikipediaService.searchTitle(titleTextField.getText());
+        } catch (NetworkException e) {
+            System.err.println("[Error] Network connection failed, please check your network status!");
+        } catch (InvalidInputException e) {
+            System.err.println("[Warning] Invalid input!");
+        } catch (PageMissingException e) {
+            System.err.println("[Error] No corresponding Wikipedia page found!");
+        }
+        revisionTextArea.setText(wikipediaService.getRevisionOutput());
     }
 }
