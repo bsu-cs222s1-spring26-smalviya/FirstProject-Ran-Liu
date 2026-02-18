@@ -31,12 +31,14 @@ public class GUI extends Application {
     private Pane configurePane() {
         Pane pane = new VBox();
         pane.getChildren().addAll(
-                new Label("Title:"),
+                new Label("Title"),
                 titleTextField,
                 searchButton,
                 revisionTitle,
                 new Label("Revision"),
-                revisionTable
+                revisionTable,
+                new Label(" Version 0.2.0 (2026-02-18)\t" +
+                        "Developed by Qingyang Ran, Yixiao Liu")
         );
         return pane;
     }
