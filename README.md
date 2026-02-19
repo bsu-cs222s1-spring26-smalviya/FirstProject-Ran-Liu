@@ -1,4 +1,5 @@
 # Wikipedia Revision Reporter
+<img src="preview.png" width="400">
 
 ## Description
 Access Wikipedia change history  
@@ -16,5 +17,15 @@ Qingyang Ran (qingyang.ran@bsu.edu)
 * JDK: Oracle OpenJDK 25.0.1
 
 ### How to Run
-1. Clone the repository
-2. Run Main.java
+First, you need to clone the repository  
+Make sure that Java and Gradle are configured correctly  
+
+#### GUI Mode
+```Bash
+./gradlew run
+```
+
+#### Console Mode
+```Bash
+./gradlew run --args="--console"
+```
