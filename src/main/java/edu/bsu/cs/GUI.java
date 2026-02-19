@@ -16,9 +16,11 @@ public class GUI extends Application {
     Button searchButton = new Button("Search");
     TableView<Revision> revisionTable = new TableView<>();
     Label revisionTitle = new Label();
+    Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) {
+        this.primaryStage = primaryStage;
         configureSearchButton();
         configureRevisionTitle();
         revisionTable.setMinSize(500, 300);
@@ -71,17 +73,20 @@ public class GUI extends Application {
             System.err.println("[Error] Network connection failed, please check your network status!");
             revisionTitle.setText("N/A");
             Alert alert = new Alert(Alert.AlertType.ERROR, "Network connection failed! \nPlease check your network status.");
+            alert.initOwner(primaryStage);
             alert.showAndWait();
             setDisable(false);
         } catch (InvalidInputException e) {
             System.err.println("[Warning] Invalid input!");
             Alert alert = new Alert(Alert.AlertType.WARNING, "Invalid Input! \nPlease enter in the correct format.");
+            alert.initOwner(primaryStage);
             alert.showAndWait();
             setDisable(false);
         } catch (PageMissingException e) {
             System.err.println("[Information] No corresponding Wikipedia page found!");
             revisionTitle.setText("Page not found");
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "No corresponding Wikipedia page found! \nMake sure you enter the correct title.");
+            alert.initOwner(primaryStage);
             alert.showAndWait();
             setDisable(false);
         }
